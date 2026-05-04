@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "solarmind"
+version = "0.1.0"
+description = "Reinforcement learning for residential solar, battery and EV optimisation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Cotswold Cleantech Energy Ltd", email = "info@ccenergy.uk"}
+]
+keywords = ["reinforcement-learning", "solar", "battery", "ev", "energy", "ppo", "octopus-agile"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "gymnasium>=1.0",
+    "torch>=2.0",
+    "stable-baselines3>=2.0",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+solarmind = "solarmind.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/cotswold-cleantech/solarmind"
+Issues = "https://github.com/cotswold-cleantech/solarmind/issues"
+
+[tool.setuptools.packages.find]
+include = ["solarmind*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
