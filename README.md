@@ -68,7 +68,7 @@ reproduced from this codebase, not assumed to match a prior figure.
 ### Install
 
 ```bash
-git clone https://github.com/cotswold-cleantech/solarmind.git
+git clone https://github.com/cotswoldcleantech/solarmind.git
 cd solarmind
 pip install -e .
 ```
